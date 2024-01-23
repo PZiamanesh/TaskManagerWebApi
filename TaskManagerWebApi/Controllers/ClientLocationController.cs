@@ -24,7 +24,7 @@ namespace TaskManagerWebApi.Controllers
         public async Task<ActionResult<ClientLocationDto>> GetClientLocations()
         {
             var entities = await _clientLocationRepository.GetClientLocationsAsync();
-            return Ok(_mapper.Map<ClientLocationDto>(entities));
+            return Ok(_mapper.Map<IEnumerable<ClientLocationDto>>(entities));
         }
     }
 }

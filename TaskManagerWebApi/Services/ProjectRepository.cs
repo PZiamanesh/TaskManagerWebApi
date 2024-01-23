@@ -29,7 +29,7 @@ namespace TaskManagerWebApi.Services
                 parameters.Date == null &&
                 string.IsNullOrWhiteSpace(parameters.SearchText))
             {
-                return await _dbContext.TaskProjects.ToListAsync();
+                return await _dbContext.TaskProjects.Include(p => p.ClientLocation).ToListAsync();
             }
 
             var collection = _dbContext.TaskProjects.Include(p=>p.ClientLocation) as IQueryable<TaskProject>;

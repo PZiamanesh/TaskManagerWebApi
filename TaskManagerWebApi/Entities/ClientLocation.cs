@@ -7,6 +7,7 @@ namespace TaskManagerWebApi.Entities
     {
         [Key]
         public int ClientLocationID { get; set; }
+
         public string ClientLocationName { get; set; }
     }
 }

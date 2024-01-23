@@ -32,6 +32,7 @@ public class ProjectController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<ProjectDto>> AddProject(ProjectForCreation createModel)
     {
+        throw new NotImplementedException();
         var entity = _mapper.Map<TaskProject>(createModel);
         await _projectRepository.InsertAsync(entity);
         _projectRepository.SaveChanges();
@@ -56,6 +57,7 @@ public class ProjectController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<ActionResult<int>> DeleteProject(int id)
     {
+        throw new NotImplementedException();
         if (!await _projectRepository.IsExistAsync(id))
         {
             return -1;

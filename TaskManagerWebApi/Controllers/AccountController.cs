@@ -63,7 +63,7 @@ namespace TaskManagerWebApi.Controllers
             var jwtSecurityToken = new JwtSecurityToken(
                 claims: claimsForToken,
                 notBefore: DateTime.UtcNow,
-                expires: DateTime.UtcNow.AddHours(1),
+                expires: DateTime.UtcNow.AddHours(8),
                 signingCredentials: signingCredentials);
 
             var tokenToReturn = new JwtSecurityTokenHandler()
